@@ -1,0 +1,106 @@
+import { Linkedin } from 'lucide-react';
+
+export default function Team() {
+  const teamMembers = [
+    {
+      name: 'Ashish Janghel',
+      role: 'Founder & CEO',
+      linkedin: '#'
+    },
+    {
+      name: 'Claire Cairns',
+      role: 'Head of Marketing + Advisor',
+      linkedin: 'https://www.linkedin.com/in/clairecblockchain/'
+    },
+    {
+      name: 'Ramesh Gopal',
+      role: 'CTO (Blockchain Architect)',
+      linkedin: '#'
+    },
+    {
+      name: 'Raman Agarwal',
+      role: 'Full Stack Developer',
+      linkedin: '#'
+    },
+    {
+      name: 'Pathanjali',
+      role: 'Partnerships + Investment Advisor',
+      linkedin: '#'
+    },
+    {
+      name: 'Easa',
+      role: 'Advisory Board + Early Investor',
+      linkedin: '#'
+    },
+    {
+      name: 'Anna',
+      role: 'Advisor (QSDCEF) Quantum Cybersecurity',
+      linkedin: '#'
+    },
+    {
+      name: 'Steve',
+      role: 'Advisor (QSDCEF) Quantum Cybersecurity',
+      linkedin: '#'
+    }
+  ];
+
+  return (
+    <section id="team" className="py-24 px-4 bg-gradient-to-b from-zenith-grey-800 to-zenith-black relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/6 w-64 h-64 bg-gradient-to-r from-white/8 to-transparent rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-gradient-to-l from-white/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-20 fade-in-section">
+          <h2 className="text-5xl md:text-6xl font-black text-gradient mb-8 leading-tight">The Team Behind Zenith</h2>
+          <p className="text-xl md:text-2xl text-zenith-grey-200 max-w-4xl mx-auto leading-relaxed">
+            A team of builders, cryptographers, marketers, and investors bridging deep R&D expertise with market execution.
+          </p>
+          <div className="w-16 h-1 bg-gradient-to-r from-white to-zenith-grey-400 rounded-full mx-auto mt-8"></div>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-animation">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="group relative bg-gradient-to-br from-zenith-grey-800/60 to-zenith-black/60 p-8 rounded-3xl border border-zenith-grey-600/50 hover:border-white/30 transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 text-center glass-effect card-hover"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+
+              <div className="relative mb-6">
+                <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-zenith-grey-700 to-zenith-black flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-white/20 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-zenith-grey-100 transition-colors duration-300">
+                {member.name}
+              </h3>
+              <p className="text-zenith-grey-300 mb-6 group-hover:text-zenith-grey-200 transition-colors duration-300">
+                {member.role}
+              </p>
+
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zenith-grey-700/50 text-white hover:bg-white hover:text-zenith-black transition-all duration-300 hover:scale-110 group-hover:shadow-lg"
+                aria-label={`${member.name} LinkedIn`}
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
