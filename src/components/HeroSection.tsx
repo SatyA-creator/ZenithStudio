@@ -142,19 +142,20 @@ export default function HeroSection() {
           <div className="text-center lg:text-left space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
             {/* Main Title with Staggered Animation - Mobile Responsive */}
             <div className="stagger-animation">
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-wide hero-text relative">
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-wide hero-text relative">
                 <span className="block animated-gradient animate-fade-in-up cursor-default relative overflow-hidden">
-                  CODE.
+                  Zenith Studio.
                   {/* Floating gradient orbs that appear on hover - hidden on mobile and tablet */}
                   <div className="hidden lg:block gradient-orb w-16 h-16 xl:w-24 xl:h-24 bg-gradient-to-r from-pink-500 to-violet-500 -top-4 -left-2 xl:-top-6 xl:-left-3"></div>
                   <div className="hidden lg:block gradient-orb w-12 h-12 xl:w-20 xl:h-20 bg-gradient-to-r from-blue-500 to-cyan-500 -bottom-2 -right-1 xl:-bottom-3 xl:-right-2"></div>
                   <div className="hidden lg:block gradient-orb w-10 h-10 xl:w-16 xl:h-16 bg-gradient-to-r from-green-400 to-emerald-500 top-1/2 -left-3 xl:-left-4"></div>
                 </span>
                 <span className="block text-white animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  CREATE.
+                  Future Proofing.
                 </span>
                 <span className="block text-white animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                  CONQUER!
+                  Digital Economies
+!
                 </span>
               </h1>
             </div>

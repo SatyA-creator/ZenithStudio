@@ -42,30 +42,28 @@ export default function Footer() {
     {
       title: 'Company',
       links: [
-        { label: 'About Us', href: '#who-we-are' },
-        { label: 'Our Team', href: '#team' },
-        { label: 'Careers', href: '#contact' },
-        { label: 'Contact', href: '#contact' }
+         { label: 'Home', href: '#home' },
+        { label: 'About Us', href: '#who-we-are' }
+       
+      
       ]
     },
     {
       title: 'Solutions',
       links: [
-        { label: 'QuantZen SDK', href: '#quantzen' },
-        { label: 'Enterprise Security', href: '#specialties' },
-        { label: 'Web3 Integration', href: '#sectors' },
-        { label: 'Consulting', href: '#contact' }
+        { label: 'Services', href: '#services' },
+        { label: 'Team', href: '#team' }
       ]
     },
-    {
-      title: 'Resources',
-      links: [
-        { label: 'Documentation', href: 'https://www.quantzen.co', external: true },
-        { label: 'API Reference', href: 'https://www.quantzen.co', external: true },
-        { label: 'Developer Tools', href: 'https://www.quantzen.co', external: true },
-        { label: 'Roadmap', href: '#roadmap' }
-      ]
-    }
+    // {
+    //   title: 'Resources',
+    //   links: [
+    //     { label: 'Documentation', href: 'https://www.quantzen.co', external: true },
+    //     { label: 'API Reference', href: 'https://www.quantzen.co', external: true },
+    //     { label: 'Developer Tools', href: 'https://www.quantzen.co', external: true },
+    //     { label: 'Roadmap', href: '#roadmap' }
+    //   ]
+    // }
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -174,7 +172,7 @@ export default function Footer() {
                   Terms of Use
                 </button>
                 <a
-                  href="https://www.quantzen.co"
+                  href="https://www.quantzen.live/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zenith-grey-400 hover:text-white transition-colors duration-300 flex items-center space-x-1"

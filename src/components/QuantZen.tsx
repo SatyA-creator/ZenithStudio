@@ -131,7 +131,7 @@ export default function QuantZen() {
         {/* CTA Button */}
         <div className="text-center scale-in">
           <a
-            href="https://www.quantzen.co"
+            href="https://www.quantzen.live/"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-4 px-12 py-6 bg-white text-zenith-black rounded-2xl font-bold text-xl overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-white/30"
