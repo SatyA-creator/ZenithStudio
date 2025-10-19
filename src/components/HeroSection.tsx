@@ -177,8 +177,8 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Enhanced CTA Buttons - Mobile Responsive */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start items-center stagger-animation px-2 sm:px-4 lg:px-0">
+            {/* Enhanced CTA Button - Mobile Responsive */}
+            <div className="flex justify-center lg:justify-start items-center stagger-animation px-2 sm:px-4 lg:px-0">
               <a
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
                 target="_blank"
@@ -190,29 +190,6 @@ export default function HeroSection() {
                   <span>Book a 30-min Migration Consult</span>
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-zenith-grey-100 via-white to-zenith-grey-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              </a>
-              
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }}
-                className="group relative w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 bg-transparent border-2 border-white/30 text-white rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/10 transform hover:scale-105 transition-all duration-500 glass-effect animate-fade-in-up"
-                style={{ animationDelay: '1.4s' }}
-              >
-                {/* <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
-                  <span>Partner With Us</span>
-                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                </span> */}
-               
               </a>
             </div> 
           </div>
