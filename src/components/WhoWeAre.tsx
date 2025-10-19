@@ -20,7 +20,7 @@ export default function WhoWeAre() {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -273,17 +273,17 @@ export default function WhoWeAre() {
                 >
                   Zenith Studio
                 </motion.span>{" "}
-                operates at the convergence of Web3 infrastructure, quantum-safe cryptography, 
-                and applied research and development. We engineer technology designed to protect 
-                the digital economy from current cyber threats and future quantum computing risks.
+                 is an innovation lab at the intersection of Web3 infrastructure, quantum-safe cryptography, and applied R&D.
+We build technology to secure the digital economy against today’s cyber threats and tomorrow’s quantum risks, creating products that are simple to integrate, regulatory-ready, and trusted by both Web3 pioneers and global enterprises.
+
               </motion.p>
               
               <motion.p 
                 className="text-base md:text-lg text-zenith-grey-300 leading-relaxed"
                 variants={itemVariants}
               >
-                Our solutions are built for seamless integration, regulatory compliance, 
-                and trusted by Web3 innovators and global enterprises alike.
+                Our flagship product, QuantZen™, delivers the world’s first Dual-Signature Security Layer™, protecting wallets, custodians, and decentralized apps against the quantum attacks without disruption to existing chains.
+
               </motion.p>
             </motion.div>
 

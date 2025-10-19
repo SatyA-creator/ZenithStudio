@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Mail, MapPin, Phone, X } from 'lucide-react';
+import { ExternalLink, Mail, MapPin, Phone, X, Shield } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;
@@ -38,7 +38,18 @@ export default function Footer() {
 
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
+  interface FooterLink {
+    label: string;
+    href: string;
+    external?: boolean;
+  }
+
+  interface FooterSection {
+    title: string;
+    links: FooterLink[];
+  }
+
+  const footerLinks: FooterSection[] = [
     {
       title: 'Company',
       links: [
@@ -54,6 +65,10 @@ export default function Footer() {
         { label: 'Services', href: '#services' },
         { label: 'Team', href: '#team' }
       ]
+    },
+    {
+      title: 'Get in Touch',
+      links: []
     },
     // {
     //   title: 'Resources',
@@ -113,52 +128,21 @@ export default function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-zenith-grey-400">
                   <Mail size={16} />
-                  <span className="text-sm">hello@zenithstudio.com</span>
+                  <span className="text-sm">info@zenithstudio.live</span>
                 </div>
                 <div className="flex items-center space-x-3 text-zenith-grey-400">
-                  <Phone size={16} />
-                  <span className="text-sm">+1 (555) 123-4567</span>
+                  {/* <Phone size={16} />
+                  <span className="text-sm">+1 (555) 123-4567</span> */}
                 </div>
                 <div className="flex items-center space-x-3 text-zenith-grey-400">
                   <MapPin size={16} />
-                  <span className="text-sm">San Francisco, CA</span>
+                  <span className="text-sm">Abu Dhabi , UAE</span>
                 </div>
-              </div>
-            </div>
 
-            {/* Footer Links */}
-            {footerLinks.map((section, index) => (
-              <div key={index}>
-                <h4 className="text-lg font-semibold text-white mb-4">{section.title}</h4>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a
-                        href={link.href}
-                        onClick={(e) => !link.external && handleLinkClick(e, link.href)}
-                        target={link.external ? '_blank' : undefined}
-                        rel={link.external ? 'noopener noreferrer' : undefined}
-                        className="text-zenith-grey-400 hover:text-white transition-colors duration-300 text-sm flex items-center space-x-2 group"
-                      >
-                        <span>{link.label}</span>
-                        {link.external && (
-                          <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        )}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-zenith-grey-700 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-zenith-grey-400 text-sm text-center md:text-left">
-                © {currentYear} Zenith Studio. All rights reserved.
               </div>
-              <div className="flex flex-wrap justify-center md:justify-end items-center space-x-6 text-sm">
+              
+              <div className="flex flex-wrap justify-center md:justify-start items-center space-x-6 text-sm mt-6">
                 <button
                   onClick={() => setShowPrivacyModal(true)}
                   className="text-zenith-grey-400 hover:text-white transition-colors duration-300"
@@ -181,6 +165,64 @@ export default function Footer() {
                   <ExternalLink size={12} />
                 </a>
               </div>
+            </div>
+
+            {/* Footer Links */}
+            {footerLinks.map((section, index) => (
+              <div key={index}>
+                <h4 className="text-lg font-semibold text-white mb-4">{section.title}</h4>
+                {section.title === 'Get in Touch' ? (
+                  <div className="space-y-3">
+                    <a
+                      href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-white text-zenith-black rounded-lg font-bold text-sm hover:bg-zenith-grey-100 transform hover:scale-105 transition-all duration-300 shadow-lg w-full justify-center"
+                    >
+                      <Mail size={16} />
+                      Contact Us
+                    </a>
+                    <a
+                      href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-transparent border-2 border-white/30 text-white rounded-lg font-bold text-sm hover:bg-white/10 transform hover:scale-105 transition-all duration-300 w-full justify-center"
+                    >
+                      <Shield size={16} />
+                      Partner With Us
+                    </a>
+                  </div>
+                ) : (
+                  <ul className="space-y-3">
+                    {section.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <a
+                          href={link.href}
+                          onClick={(e) => !link.external && handleLinkClick(e, link.href)}
+                          target={link.external ? '_blank' : undefined}
+                          rel={link.external ? 'noopener noreferrer' : undefined}
+                          className="text-zenith-grey-400 hover:text-white transition-colors duration-300 text-sm flex items-center space-x-2 group"
+                        >
+                          <span>{link.label}</span>
+                          {link.external && (
+                            <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          )}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-zenith-grey-700 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-zenith-grey-400 text-sm text-center md:text-left">
+                © {currentYear}- Zenith Studio LLC. All Rights Reserved. QuantZen™ developed by Zenith Studio LLC are registered trademarks licensed under the Government of Ras Al Khaimah, United Arab Emirates. All content, including but not limited to text, code, software, graphics, trademarks, visual identity, SDK , Logo documentation, and digital assets, is the exclusive intellectual property of Zenith Studio LLC. Unauthorised reproduction, distribution, modification, reverse engineering, or republication, in whole or in part, without prior written permission, is strictly prohibited and may result in legal action under applicable UAE Federal Copyright Law No. 7 of 2002 (as amended) and relevant international treaties.
+              </div>
+              
             </div>
           </div>
         </div>
@@ -241,11 +283,34 @@ export default function Footer() {
           </section>
 
           <section>
-            <h3 className="text-xl font-semibold text-white mb-3">5. Contact Us</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">5. Data Retention</h3>
+            <p className="mb-4">
+              We retain your personal information only as long as necessary to provide our services 
+              and fulfill the purposes outlined in this privacy policy, unless a longer retention 
+              period is required or permitted by law.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">6. Your Rights</h3>
+            <p className="mb-4">
+              Depending on your location, you may have certain rights regarding your personal information:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-zenith-grey-300">
+              <li>Access to your personal data</li>
+              <li>Correction of inaccurate data</li>
+              <li>Deletion of your data</li>
+              <li>Data portability</li>
+              <li>Objection to processing</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">7. Contact Us</h3>
             <p>
               If you have any questions about this Privacy Policy, please contact us at{' '}
-              <a href="mailto:privacy@zenithstudio.com" className="text-blue-400 hover:text-blue-300">
-                privacy@zenithstudio.com
+              <a href="mailto:info@zenithstudio.live" className="text-blue-400 hover:text-blue-300">
+                info@zenithstudio.live
               </a>
             </p>
           </section>
@@ -324,11 +389,29 @@ export default function Footer() {
           </section>
 
           <section>
-            <h3 className="text-xl font-semibold text-white mb-3">7. Contact Information</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">7. Modifications to Terms</h3>
+            <p className="mb-4">
+              We reserve the right to modify these terms at any time. Changes will be effective 
+              immediately upon posting to our website. Your continued use of our services after 
+              any such changes constitutes your acceptance of the new terms.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">8. Governing Law</h3>
+            <p className="mb-4">
+              These Terms of Use shall be governed by and construed in accordance with the laws 
+              of the United Arab Emirates. Any disputes arising from these terms shall be subject 
+              to the exclusive jurisdiction of the courts of Abu Dhabi, UAE.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">9. Contact Information</h3>
             <p>
               For questions about these Terms of Use, please contact us at{' '}
-              <a href="mailto:legal@zenithstudio.com" className="text-blue-400 hover:text-blue-300">
-                legal@zenithstudio.com
+              <a href="mailto:info@zenithstudio.live" className="text-blue-400 hover:text-blue-300">
+                info@zenithstudio.live
               </a>
             </p>
           </section>

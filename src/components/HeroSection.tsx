@@ -142,30 +142,26 @@ export default function HeroSection() {
           <div className="text-center lg:text-left space-y-4 sm:space-y-6 md:space-y-8 order-2 lg:order-1">
             {/* Main Title with Staggered Animation - Mobile Responsive */}
             <div className="stagger-animation">
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-wide hero-text relative">
+              <h1 className="text-1xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight tracking-wide hero-text relative">
                 <span className="block animated-gradient animate-fade-in-up cursor-default relative overflow-hidden">
-                  Zenith Studio.
+                  ZENITH STUDIO
                   {/* Floating gradient orbs that appear on hover - hidden on mobile and tablet */}
                   <div className="hidden lg:block gradient-orb w-16 h-16 xl:w-24 xl:h-24 bg-gradient-to-r from-pink-500 to-violet-500 -top-4 -left-2 xl:-top-6 xl:-left-3"></div>
                   <div className="hidden lg:block gradient-orb w-12 h-12 xl:w-20 xl:h-20 bg-gradient-to-r from-blue-500 to-cyan-500 -bottom-2 -right-1 xl:-bottom-3 xl:-right-2"></div>
                   <div className="hidden lg:block gradient-orb w-10 h-10 xl:w-16 xl:h-16 bg-gradient-to-r from-green-400 to-emerald-500 top-1/2 -left-3 xl:-left-4"></div>
                 </span>
-                <span className="block text-white animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  Future Proofing.
+                <span className=" block text-white animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  FUTURE PROOFING
                 </span>
                 <span className="block text-white animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                  Digital Economies
-!
+                  DIGITAL ECONOMIES
                 </span>
               </h1>
             </div>
 
             {/* Animated Tagline - Mobile Responsive */}
             <div className="space-y-3 sm:space-y-4 md:space-y-6 stagger-animation">
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-zenith-grey-200 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                ZENITH STUDIO
-              </p>
-              <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center space-y-3 sm:space-y-0 sm:space-x-6 md:space-x-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+              <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center space-y-3 sm:space-y-0 sm:space-x-6 md:space-x-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                 <div className="flex items-center space-x-2">
                   <Shield className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                   <span className="text-zenith-grey-300 text-xs sm:text-sm md:text-base">Innovation</span>
@@ -176,22 +172,22 @@ export default function HeroSection() {
                   <span className="text-zenith-grey-300 text-xs sm:text-sm md:text-base">Excellence</span>
                 </div>
               </div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-zenith-grey-400 max-w-2xl lg:max-w-none leading-relaxed animate-fade-in-up px-2 sm:px-4 lg:px-0" style={{ animationDelay: '1s' }}>
-                Crafting exceptional digital experiences with cutting-edge technology and creative excellence
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-zenith-grey-400 max-w-2xl lg:max-w-none leading-relaxed animate-fade-in-up px-2 sm:px-4 lg:px-0" style={{ animationDelay: '0.8s' }}>
+                Pioneering post-quantum cryptography solutions for Web3 and enterprise security. Building the future of digital trust, one quantum-safe algorithm at a time.
               </p>
             </div>
 
             {/* Enhanced CTA Buttons - Mobile Responsive */}
-            {/* <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start items-center stagger-animation px-2 sm:px-4 lg:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start items-center stagger-animation px-2 sm:px-4 lg:px-0">
               <a
-                href="https://www.quantzen.co"
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 bg-white text-zenith-black rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-white/30 animate-fade-in-up"
                 style={{ animationDelay: '1.2s' }}
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
-                  <span>Explore QuantZen</span>
+                  <span>Book a 30-min Migration Consult</span>
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-zenith-grey-100 via-white to-zenith-grey-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
@@ -212,13 +208,13 @@ export default function HeroSection() {
                 className="group relative w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 bg-transparent border-2 border-white/30 text-white rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/10 transform hover:scale-105 transition-all duration-500 glass-effect animate-fade-in-up"
                 style={{ animationDelay: '1.4s' }}
               >
-                <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
+                {/* <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
                   <span>Partner With Us</span>
                   <Shield className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl md:rounded-2xl"></div>
+                </span> */}
+               
               </a>
-            </div> */}
+            </div> 
           </div>
 
           {/* Right Side - GIF - Mobile Responsive */}
