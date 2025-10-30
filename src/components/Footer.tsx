@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Mail, MapPin, Phone, X, Shield } from 'lucide-react';
+import { ExternalLink, Mail, MapPin, X, Shield } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;

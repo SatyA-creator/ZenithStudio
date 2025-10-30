@@ -17,11 +17,7 @@ export default function WhoWeAre() {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
+      opacity: 1
     }
   };
 
@@ -44,7 +40,7 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section id="who-we-are" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-zenith-black via-zenith-grey-900 to-zenith-grey-800">
+    <section id="who-we-are" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-zenith-black via-zenith-grey-900 to-zenith-grey-800">
       
       {/* Enhanced Quantum Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -132,11 +128,17 @@ export default function WhoWeAre() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        transition={{ 
+          duration: 0.8,
+          ease: "easeOut",
+          staggerChildren: 0.2,
+          delayChildren: 0.1
+        }}
       >
         
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16 md:mb-24"
+          className="text-center mb-12 md:mb-16"
           variants={itemVariants}
         >
           <motion.div 
@@ -170,7 +172,7 @@ export default function WhoWeAre() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-12">
           
           {/* Left - Enhanced Visual */}
           <motion.div
