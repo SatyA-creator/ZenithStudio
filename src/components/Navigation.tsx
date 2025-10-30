@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Twitter, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navigation() {
@@ -60,6 +60,28 @@ export default function Navigation() {
             >
               Join Us
             </a>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-3 ml-6">
+              <a
+                href="https://x.com/zenith__studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-black transition-all duration-300 p-2 rounded-full hover:bg-gray-100"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/zenithstudio009/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-black transition-all duration-300 p-2 rounded-full hover:bg-gray-100"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -108,6 +130,28 @@ export default function Navigation() {
               >
                 Get a Quote
               </a>
+              
+              {/* Mobile Social Media Icons */}
+              <div className="flex justify-center space-x-6 mt-6 pt-4 border-t border-zenith-grey-700">
+                <a
+                  href="https://twitter.com/zenithstudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zenith-grey-300 hover:text-white transition-all duration-300 p-3 rounded-lg hover:bg-zenith-grey-800"
+                  aria-label="Twitter"
+                >
+                  <Twitter size={24} />
+                </a>
+                <a
+                  href="https://linkedin.com/company/zenithstudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zenith-grey-300 hover:text-white transition-all duration-300 p-3 rounded-lg hover:bg-zenith-grey-800"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={24} />
+                </a>
+              </div>
             </div>
           </div>
         )}

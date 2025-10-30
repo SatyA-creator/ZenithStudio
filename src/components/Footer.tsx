@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Mail, MapPin, X, Shield } from 'lucide-react';
+import { ExternalLink, Mail, MapPin, X, Shield, Twitter, Linkedin } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;
@@ -191,6 +191,28 @@ export default function Footer() {
                       <Shield size={16} />
                       Partner With Us
                     </a>
+                    
+                    {/* Social Media Icons */}
+                    <div className="flex justify-center space-x-4 mt-4 pt-4 border-t border-white/10">
+                      <a
+                        href="https://x.com/zenith__studio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zenith-grey-400 hover:text-white transition-all duration-300 p-3 rounded-lg hover:bg-white/10 group"
+                        aria-label="Follow us on Twitter"
+                      >
+                        <Twitter size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/company/zenithstudio009/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zenith-grey-400 hover:text-white transition-all duration-300 p-3 rounded-lg hover:bg-white/10 group"
+                        aria-label="Connect with us on LinkedIn"
+                      >
+                        <Linkedin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <ul className="space-y-3">
