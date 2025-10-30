@@ -113,24 +113,31 @@ export default function HeroSection() {
 
       {/* Animated Logo with Effects - Positioned in left corner - Mobile Responsive */}
       <div className="absolute top-4 left-4 md:top-8 lg:top-12 md:left-8 lg:left-14 z-20 animate-scale-in">
-        <div className="relative group">
-          {/* Hover glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 rounded-2xl md:rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110"></div>
-          
-          {/* Logo container */}
-          <div className="relative bg-gradient-to-br from-zenith-grey-800 to-zenith-black p-2 md:p-3 lg:p-4 rounded-xl md:rounded-2xl lg:rounded-3xl border border-white/10 shadow-2xl">
-            <img 
-              src="/logo.jpg" 
-              alt="Zenith Studio Logo" 
-              className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-16 lg:w-16 object-contain rounded-lg md:rounded-xl lg:rounded-2xl animate-float"
-            />
-          </div>
+        <a 
+          href="https://www.quantumsecuritydefence.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <div className="relative group cursor-pointer">
+            {/* Hover glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 rounded-2xl md:rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110"></div>
+            
+            {/* Logo container */}
+            <div className="relative bg-gradient-to-br from-zenith-grey-800 to-zenith-black p-2 md:p-3 lg:p-4 rounded-xl md:rounded-2xl lg:rounded-3xl border border-white/10 shadow-2xl group-hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/logo.jpg" 
+                alt="Zenith Studio Logo" 
+                className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-16 lg:w-16 object-contain rounded-lg md:rounded-xl lg:rounded-2xl animate-float"
+              />
+            </div>
 
-          {/* Sparkle icon */}
-          <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2">
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white animate-pulse" />
+            {/* Sparkle icon */}
+            <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white animate-pulse" />
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
 
@@ -177,8 +184,9 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Enhanced CTA Button - Mobile Responsive */}
-            <div className="flex justify-center lg:justify-start items-center stagger-animation px-2 sm:px-4 lg:px-0">
+            {/* Enhanced CTA Button and Backed by Logo - Side by Side Layout */}
+            <div className="flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-start gap-4 lg:gap-8 stagger-animation px-2 sm:px-4 lg:px-0">
+              {/* Migration Button */}
               <a
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
                 target="_blank"
@@ -191,6 +199,33 @@ export default function HeroSection() {
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                 </span>
               </a>
+
+              {/* Backed by Logo Section */}
+              <div className="flex flex-col items-center space-y-2 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+                <p className="text-xs text-zenith-grey-400 font-medium tracking-wider uppercase">
+                  Backed by
+                </p>
+                <a
+                  href="https://www.quantumsecuritydefence.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block transition-all duration-300 hover:scale-105"
+                >
+                  <div className="relative">
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-white/10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Logo container */}
+                    <div className="relative bg-gradient-to-br from-zenith-grey-800/30 to-zenith-black/30 p-2 sm:p-3 rounded-lg border border-white/10 backdrop-blur-sm group-hover:border-white/30 transition-all duration-300">
+                      <img 
+                        src="/new logo.png" 
+                        alt="Quantum Security Defence Foundation" 
+                        className="h-6 sm:h-8 md:h-10 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div> 
           </div>
 
