@@ -184,51 +184,127 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Enhanced CTA Button and Backed by Logo - Fully Responsive Layout with Proper Spacing */}
-{/* CTA + Backed By Section - Final Mobile/Desktop Fix */}
-<div className="mt-8 sm:mt-10 md:mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 md:gap-8 px-3 sm:px-6 md:px-0 animate-fade-in-up">
-  
-  {/* Button */}
-  <a
-    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group relative px-5 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white text-zenith-black rounded-xl md:rounded-2xl font-bold text-sm sm:text-base md:text-lg overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-white/30 flex-shrink-0"
-    style={{ animationDelay: '1.2s' }}
-  >
-    <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
-      <span>Book a 30-min Migration Consult</span>
-      <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-    </span>
-  </a>
+            {/* Enhanced CTA Buttons and Backed by Logo - Mobile & Desktop Optimized */}
+            <div className="mt-8 sm:mt-10 md:mt-12 animate-fade-in-up">
+              
+              {/* Mobile Layout - Stacked Vertically */}
+              <div className="flex flex-col items-center space-y-6 md:hidden">
+                {/* Buttons Container - Mobile */}
+                <div className="flex flex-col items-center space-y-4 w-full max-w-sm">
+                  {/* Migration Consult Button */}
+                  <a
+                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative w-full px-6 py-4 bg-white text-zenith-black rounded-xl font-bold text-sm overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-white/30"
+                    style={{ animationDelay: '1.2s' }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center space-x-2">
+                      <span>Book a 30-min Migration Consult</span>
+                      <Zap className="w-4 h-4" />
+                    </span>
+                  </a>
 
-  {/* Backed By */}
-  <div className="flex flex-col items-center sm:items-start justify-center animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-    <p className="text-[10px] sm:text-xs md:text-sm text-zenith-grey-400 font-medium tracking-[0.15em] uppercase whitespace-nowrap mb-1 text-center sm:text-left">
-      Backed by
-    </p>
-    <a
-      href="https://www.quantumsecuritydefence.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block transition-all duration-300 hover:scale-105"
-    >
-      <div className="relative flex items-center justify-center">
-        {/* Hover glow */}
-        <div className="absolute inset-0 bg-white/10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* QuantZen Button */}
+                  <a
+                    href="https://www.quantzen.live/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative w-80 px-6 py-4 bg-gradient-to-r from-zenith-grey-700 to-zenith-grey-800 text-white border-2 border-white/20 hover:border-white/40 rounded-xl font-bold text-sm overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-white/20"
+                    style={{ animationDelay: '1.3s' }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center space-x-2">
+                      <span>Explore QuantZen</span>
+                      <Zap className="w-4 h-4" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </a>
+                </div>
 
-        {/* Logo */}
-        <div className="relative bg-gradient-to-br from-zenith-grey-800/30 to-zenith-black/30 p-2 sm:p-2.5 md:p-3 rounded-lg border border-white/10 backdrop-blur-sm group-hover:border-white/30 transition-all duration-300">
-          <img
-            src="/new logo.png"
-            alt="Quantum Security Defence Foundation"
-            className="h-7 sm:h-9 md:h-11 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
-          />
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
+                {/* Backed By Section - Mobile */}
+                <div className="flex flex-col items-center space-y-3 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+                  <p className="text-xs text-zenith-grey-400 font-medium tracking-wider uppercase">
+                    Backed by
+                  </p>
+                  <a
+                    href="https://www.quantumsecuritydefence.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white/10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative bg-gradient-to-br from-zenith-grey-800/30 to-zenith-black/30 p-3 rounded-lg border border-white/10 backdrop-blur-sm group-hover:border-white/30 transition-all duration-300">
+                        <img
+                          src="/new logo.png"
+                          alt="Quantum Security Defence Foundation"
+                          className="h-10 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              {/* Desktop/Tablet Layout - Side by Side */}
+              <div className="hidden md:flex items-start justify-center lg:justify-start gap-8 lg:gap-10">
+                {/* Buttons Container - Desktop */}
+                <div className="flex flex-col items-center lg:items-start space-y-4">
+                  {/* Migration Consult Button */}
+                  <a
+                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative px-7 md:px-8 py-3.5 md:py-4 bg-white text-zenith-black rounded-xl md:rounded-2xl font-bold text-base md:text-lg overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-white/30 flex-shrink-0"
+                    style={{ animationDelay: '1.2s' }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
+                      <span>Book a 30-min Migration Consult</span>
+                      <Zap className="w-4 h-4 md:w-5 md:h-5" />
+                    </span>
+                  </a>
+
+                  {/* QuantZen Button */}
+                  <a
+                    href="https://www.quantzen.live/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative px-7 md:px-8 py-3.5 md:py-4 bg-gradient-to-r from-zenith-grey-700 to-zenith-grey-800 text-white border-2 border-white/20 hover:border-white/40 rounded-xl md:rounded-2xl font-bold text-base md:text-lg overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-white/20 flex-shrink-0"
+                    style={{ animationDelay: '1.3s' }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center space-x-2 md:space-x-3">
+                      <span>Explore QuantZen</span>
+                      <Zap className="w-4 h-4 md:w-5 md:h-5" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </a>
+                </div>
+
+                {/* Backed By Section - Desktop */}
+                <div className="flex flex-col items-center space-y-4 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+                  <p className="text-sm md:text-base text-zenith-grey-400 font-medium tracking-wider uppercase">
+                    Backed by
+                  </p>
+                  <a
+                    href="https://www.quantumsecuritydefence.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative bg-gradient-to-br from-zenith-grey-800/30 to-zenith-black/30 p-4 rounded-xl border border-white/10 backdrop-blur-sm group-hover:border-white/30 transition-all duration-300">
+                        <img
+                          src="/new logo.png"
+                          alt="Quantum Security Defence Foundation"
+                          className="h-14 md:h-16 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
 
 
           </div>

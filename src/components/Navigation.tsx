@@ -56,7 +56,7 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleClick(e, '#contact')}
-              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium ml-4"
+              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all duration-300 font-small ml-4"
             >
               Join Us
             </a>

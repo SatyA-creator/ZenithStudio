@@ -12,6 +12,7 @@ import Roadmap from './components/Roadmap';
 import WhyNow from './components/WhyNow';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   useEffect(() => {
@@ -76,6 +77,7 @@ function App() {
       <WhyNow />
       <ContactForm />
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
