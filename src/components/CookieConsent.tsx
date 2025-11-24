@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Cookie, X, Check, Settings } from 'lucide-react';
+import { Cookie, Check, Settings } from 'lucide-react';
 
 interface CookieConsent {
   necessary: boolean;
@@ -10,18 +10,30 @@ interface CookieConsent {
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [userHasInteracted, setUserHasInteracted] = useState(false);
   const [consent, setConsent] = useState<CookieConsent>({
     necessary: true,
-    analytics: false,
-    marketing: false,
+    analytics: true,
+    marketing: true,
   });
 
   useEffect(() => {
+    // TEMPORARY: Force show banner for testing
+    setShowBanner(true);
+    
     // Check if user has already given consent
     const savedConsent = localStorage.getItem('zenith-cookie-consent');
+    console.log('Saved consent:', savedConsent); // Debug log
+    
     if (!savedConsent) {
+      console.log('No saved consent, showing banner in 2 seconds'); // Debug log
       // Delay showing banner for better UX
-      setTimeout(() => setShowBanner(true), 2000);
+      setTimeout(() => {
+        console.log('Setting showBanner to true'); // Debug log
+        setShowBanner(true);
+      }, 2000);
+    } else {
+      console.log('User has already given consent'); // Debug log
     }
   }, []);
 
@@ -36,8 +48,7 @@ export default function CookieConsent() {
     setShowBanner(false);
   };
 
-  const handleSaveSettings = () => {
-    saveCookieConsent(consent);
+  const handleAcceptSelection = () => {
     setShowBanner(false);
     setShowSettings(false);
   };
@@ -63,11 +74,19 @@ export default function CookieConsent() {
   const toggleConsent = (type: keyof CookieConsent) => {
     if (type === 'necessary') return; // Necessary cookies cannot be disabled
     
-    setConsent(prev => ({
-      ...prev,
-      [type]: !prev[type],
-    }));
+    setUserHasInteracted(true);
+    const newConsent = {
+      ...consent,
+      [type]: !consent[type],
+    };
+    setConsent(newConsent);
+    // Automatically save preferences when changed
+    saveCookieConsent(newConsent);
   };
+
+  // Simple logic: Show "Accept All" by default, only show "Accept Selection" if user turned something off
+  const allOptionalEnabled = consent.analytics && consent.marketing;
+  const showAcceptSelection = userHasInteracted && !allOptionalEnabled;
 
   if (!showBanner) return null;
 
@@ -105,11 +124,11 @@ export default function CookieConsent() {
               </button>
               
               <button
-                onClick={handleAcceptAll}
+                onClick={showAcceptSelection ? handleAcceptSelection : handleAcceptAll}
                 className="flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-zenith-black rounded-lg font-bold text-sm hover:bg-zenith-grey-100 transition-all duration-300 shadow-lg hover:shadow-white/20"
               >
                 <Check className="w-4 h-4" />
-                <span>Accept All</span>
+                <span>{showAcceptSelection ? 'Accept Selection' : 'Accept All'}</span>
               </button>
             </div>
           </div>
@@ -183,15 +202,14 @@ export default function CookieConsent() {
                   </button>
                 </div>
 
-                {/* Save Settings Button */}
-                <div className="pt-4 flex justify-end">
-                  <button
-                    onClick={handleSaveSettings}
-                    className="px-6 py-2.5 bg-white text-zenith-black rounded-lg font-bold text-sm hover:bg-zenith-grey-100 transition-all duration-300 shadow-lg"
-                  >
-                    Save Preferences
-                  </button>
-                </div>
+                {/* Auto-save notification */}
+                {showAcceptSelection && (
+                  <div className="pt-4">
+                    <p className="text-xs text-zenith-grey-400 text-center">
+                      ✓ Your preferences are automatically saved
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           )}
