@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Mail, MapPin, X, Shield, Twitter, Linkedin } from 'lucide-react';
+import { ExternalLink, Mail, MapPin, X, Shield, Twitter, Linkedin, FileText } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;
@@ -54,9 +54,8 @@ export default function Footer() {
       title: 'Company',
       links: [
          { label: 'Home', href: '#home' },
-        { label: 'About Us', href: '#who-we-are' }
-       
-      
+        { label: 'About Us', href: '#who-we-are' },
+        { label: 'Whitepaper', href: 'https://drive.google.com/file/d/1saUFPcv5kjfmV_Qg4KEwrJz891EBnsCW/view?usp=drivesdk', external: true }
       ]
     },
     {

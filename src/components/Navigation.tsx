@@ -1,4 +1,4 @@
-import { Menu, X, Twitter, Linkedin } from 'lucide-react';
+import { Menu, X, Twitter, Linkedin, FileText } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navigation() {
@@ -8,10 +8,16 @@ export default function Navigation() {
     { label: 'Home', href: '#hero' },
     { label: 'About us', href: '#who-we-are' },
     { label: 'Services', href: '#specialties' },
-    { label: 'Team', href: '#team' }
+    { label: 'Team', href: '#team' },
+    { label: 'Whitepaper', href: 'https://drive.google.com/file/d/1saUFPcv5kjfmV_Qg4KEwrJz891EBnsCW/view?usp=drivesdk', external: true }
   ];
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, external?: boolean) => {
+    if (external) {
+      // For external links, let the default behavior happen
+      setIsOpen(false); // Close mobile menu if open
+      return;
+    }
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
@@ -26,8 +32,8 @@ export default function Navigation() {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300">
-        <div className="bg-white/90 backdrop-blur-md rounded-full px-8 py-3 shadow-2xl border border-white/20">
+      <nav className="hidden lg:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300">
+        <div className="bg-white/90 backdrop-blur-md rounded-full px-8 py-3 shadow-2xl border border-white/20 min-w-max">
           <div className="flex items-center justify-center space-x-8">
             {/* Logo */}
             <a href="#hero" onClick={(e) => handleClick(e, '#hero')} className="flex items-center group mr-4">
@@ -39,15 +45,18 @@ export default function Navigation() {
             </a>
 
             {/* Navigation Items */}
-            <div className="flex space-x-8">
+            <div className="flex space-x-7">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => handleClick(e, item.href)}
-                  className="text-gray-700 hover:text-black transition-all duration-300 font-medium py-2 px-3 rounded-full hover:bg-gray-100"
+                  onClick={(e) => handleClick(e, item.href, item.external)}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className="text-gray-700 hover:text-black transition-all duration-300 font-medium py-2 px-3 rounded-full hover:bg-gray-100 flex items-center space-x-2 text-sm"
                 >
-                  {item.label}
+                  {item.label === 'Whitepaper' && <FileText size={16} />}
+                  <span>{item.label}</span>
                 </a>
               ))}
             </div>
@@ -56,13 +65,13 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={(e) => handleClick(e, '#contact')}
-              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all duration-300 font-small ml-4"
+              className="bg-black text-white px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium ml-4 text-sm"
             >
               Join Us
             </a>
 
             {/* Social Media Icons */}
-            <div className="flex items-center space-x-3 ml-6">
+            <div className="flex items-center space-x-3 ml-5">
               <a
                 href="https://x.com/zenith__studio"
                 target="_blank"
@@ -80,6 +89,60 @@ export default function Navigation() {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Tablet Navigation */}
+      <nav className="hidden md:block lg:hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300">
+        <div className="bg-white/90 backdrop-blur-md rounded-full px-6 py-3 shadow-2xl border border-white/20 min-w-max">
+          <div className="flex items-center justify-center space-x-6">
+            {/* Logo */}
+            <a href="#hero" onClick={(e) => handleClick(e, '#hero')} className="flex items-center group mr-2">
+              <img 
+                src="/logo.jpg" 
+                alt="Zenith Studio Logo" 
+                className="h-8 w-8 object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
+              />
+            </a>
+
+            {/* Core Navigation Items Only */}
+            <div className="flex space-x-5">
+              {navItems.filter(item => ['Home', 'About us', 'Services', 'Team'].includes(item.label)).map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleClick(e, item.href, item.external)}
+                  className="text-gray-700 hover:text-black transition-all duration-300 font-medium py-2 px-3 rounded-full hover:bg-gray-100 text-sm"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Compact Actions */}
+            <div className="flex items-center space-x-3 ml-3">
+              {/* Whitepaper as Icon Only */}
+              <a
+                href={navItems.find(item => item.label === 'Whitepaper')?.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-black transition-all duration-300 p-2 rounded-full hover:bg-gray-100"
+                aria-label="Download Whitepaper"
+                title="Download Whitepaper"
+              >
+                <FileText size={20} />
+              </a>
+              
+              {/* Join Us Button */}
+              <a
+                href="#contact"
+                onClick={(e) => handleClick(e, '#contact')}
+                className="bg-black text-white px-5 py-2.5 rounded-full hover:bg-gray-800 transition-all duration-300 font-medium text-sm"
+              >
+                Join Us
               </a>
             </div>
           </div>
@@ -117,10 +180,13 @@ export default function Navigation() {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => handleClick(e, item.href)}
-                  className="block text-zenith-grey-300 hover:text-white transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-zenith-grey-800 text-lg"
+                  onClick={(e) => handleClick(e, item.href, item.external)}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className="flex items-center space-x-3 text-zenith-grey-300 hover:text-white transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-zenith-grey-800 text-lg"
                 >
-                  {item.label}
+                  {item.label === 'Whitepaper' && <FileText size={20} />}
+                  <span>{item.label}</span>
                 </a>
               ))}
               <a
