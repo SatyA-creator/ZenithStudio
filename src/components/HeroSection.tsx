@@ -252,7 +252,7 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center lg:items-start space-y-4">
                   {/* Migration Consult Button */}
                   <a
-                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3k8bf2saxgmySPlmQAQYLXiZz_DAuVlZ5mORjJsNnjojp48BwlqX0sWC0LzEd0Tem5YZyz_qDm"
+                    href="https://outlook.office.com/bookwithme/user/6c40c19ef70d49a4a0b26a289f3b3005@quantzen.live/meetingtype/FTx1cTuAEkq6RUz2kd8k7w2?anonymous&ismsaljsauthenabled&ep=mlink"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative px-7 md:px-8 py-3.5 md:py-4 bg-white text-zenith-black rounded-xl md:rounded-2xl font-bold text-base md:text-lg overflow-hidden transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-white/30 flex-shrink-0"
