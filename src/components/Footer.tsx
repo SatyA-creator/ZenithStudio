@@ -55,7 +55,7 @@ export default function Footer() {
       links: [
          { label: 'Home', href: '#home' },
         { label: 'About Us', href: '#who-we-are' },
-        { label: 'Whitepaper', href: 'https://drive.google.com/file/d/1saUFPcv5kjfmV_Qg4KEwrJz891EBnsCW/view?usp=drivesdk', external: true }
+        { label: 'Whitepaper', href: 'https://quantzen-my.sharepoint.com/:b:/g/personal/support_quantzen_live/IQBuPTTFs20jT4vWull0t_mgAfAIx-mJt8weznC88NHkPlo', external: true }
       ]
     },
     {

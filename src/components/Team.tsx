@@ -18,14 +18,14 @@ export default function Team() {
       image: "/clarie.jpg",
       linkedin: "https://www.linkedin.com/in/clairecblockchain/",
     },
-    {
-   name: "Ramesh Gopal",
-      role: "CTO",
-      expertise: "Blockchain Architect, Smart Contracts & DeFi Expert",
-      description: "Experienced Blockchain Architect with 13+ years in DLT, Ethereum, and Web3 security expert in smart contracts, DeFi ecosystems, and scalable decentralised architectures driving innovation and quantum-safe integration.",
-      image: "/ramesh.jpg",
-      linkedin: "https://www.linkedin.com/in/ramesh-gopal/",
-    },
+  //   {
+  //  name: "Ramesh Gopal",
+  //     role: "CTO",
+  //     expertise: "Blockchain Architect, Smart Contracts & DeFi Expert",
+  //     description: "Experienced Blockchain Architect with 13+ years in DLT, Ethereum, and Web3 security expert in smart contracts, DeFi ecosystems, and scalable decentralised architectures driving innovation and quantum-safe integration.",
+  //     image: "/ramesh.jpg",
+  //     linkedin: "https://www.linkedin.com/in/ramesh-gopal/",
+  //   },
    
     {
       name: "Pathanjali Sharma",
@@ -81,66 +81,136 @@ export default function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
-          {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="group relative bg-gradient-to-br from-zenith-grey-800/60 to-zenith-black/60 p-6 rounded-3xl border border-zenith-grey-600/50 hover:border-white/30 transition-all duration-500 transform hover:-translate-y-4 hover:scale-102 text-center glass-effect card-hover flex flex-col h-full"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Image Container */}
-              <div className="relative mb-4">
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white/60 transition-all duration-500 shadow-lg">
-                  {member.image ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zenith-grey-700 to-zenith-black text-white text-lg font-bold">
-                      {member.name.split(' ').map((n) => n[0]).join('')}
-                    </div>
-                  )}
+        <div className="stagger-animation">
+          {/* First Row - 3 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mb-8">
+            {teamMembers.slice(0, 3).map((member, index) => (
+              <div
+                key={index}
+                className="group relative bg-gradient-to-br from-zenith-grey-800/60 to-zenith-black/60 
+                           p-6 rounded-3xl border border-zenith-grey-600/50 hover:border-white/30 
+                           transition-all duration-500 transform hover:-translate-y-4 hover:scale-102 
+                           text-center glass-effect card-hover flex flex-col h-full w-full max-w-md"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Image Container */}
+                <div className="relative mb-4">
+                  <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white/60 transition-all duration-500 shadow-lg">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zenith-grey-700 to-zenith-black text-white text-lg font-bold">
+                        {member.name.split(' ').map((n) => n[0]).join('')}
+                      </div>
+                    )}
+                  </div>
+                  <div className="absolute inset-0 bg-white/20 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                 </div>
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              </div>
 
-              {/* Name and Role */}
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-zenith-grey-100 transition-colors duration-300">
-                {member.name}
-              </h3>
-              <p className="text-zenith-grey-300 mb-3 group-hover:text-zenith-grey-200 transition-colors duration-300 font-semibold">
-                {member.role}
-              </p>
-               {/* Expertise Badge */}
-              <div className="mb-4">
-                <div className="inline-block bg-gradient-to-r from-white/10 to-white/5 border border-white/20 rounded-full px-4 py-2 backdrop-blur-sm">
-                  <p className="text-xs text-white font-medium">
-                    {member.expertise}
-                  </p>
+                {/* Name and Role */}
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-zenith-grey-100 transition-colors duration-300">
+                  {member.name}
+                </h3>
+                <p className="text-zenith-grey-300 mb-3 group-hover:text-zenith-grey-200 transition-colors duration-300 font-semibold">
+                  {member.role}
+                </p>
+                {/* Expertise Badge */}
+                <div className="mb-4">
+                  <div className="inline-block bg-gradient-to-r from-white/10 to-white/5 border border-white/20 rounded-full px-4 py-2 backdrop-blur-sm">
+                    <p className="text-xs text-white font-medium">
+                      {member.expertise}
+                    </p>
+                  </div>
+                </div>
+                {/* Description */}
+                <p className="text-zenith-grey-400 mb-4 group-hover:text-zenith-grey-300 transition-colors duration-300 text-sm leading-relaxed flex-grow">
+                  {member.description}
+                </p>
+
+                {/* LinkedIn Button */}
+                <div className="mt-auto">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zenith-grey-700/50 text-white hover:bg-white hover:text-zenith-black transition-all duration-300 hover:scale-110 group-hover:shadow-lg"
+                    aria-label={`${member.name} LinkedIn`}
+                  >
+                    <Linkedin size={20} />
+                  </a>
                 </div>
               </div>
-              {/* Description */}
-              <p className="text-zenith-grey-400 mb-4 group-hover:text-zenith-grey-300 transition-colors duration-300 text-sm leading-relaxed flex-grow">
-                {member.description}
-              </p>
+            ))}
+          </div>
 
-             
-              {/* LinkedIn Button */}
-              <div className="mt-auto">
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zenith-grey-700/50 text-white hover:bg-white hover:text-zenith-black transition-all duration-300 hover:scale-110 group-hover:shadow-lg"
-                  aria-label={`${member.name} LinkedIn`}
-                >
-                  <Linkedin size={20} />
-                </a>
+          {/* Second Row - 2 Members Centered */}
+          <div className="flex justify-center gap-8 flex-wrap">
+            {teamMembers.slice(3).map((member, index) => (
+              <div
+                key={index + 3}
+                className="group relative bg-gradient-to-br from-zenith-grey-800/60 to-zenith-black/60 
+                           p-6 rounded-3xl border border-zenith-grey-600/50 hover:border-white/30 
+                           transition-all duration-500 transform hover:-translate-y-4 hover:scale-102 
+                           text-center glass-effect card-hover flex flex-col h-full w-full max-w-md"
+                style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+              >
+                {/* Image Container */}
+                <div className="relative mb-4">
+                  <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white/60 transition-all duration-500 shadow-lg">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zenith-grey-700 to-zenith-black text-white text-lg font-bold">
+                        {member.name.split(' ').map((n) => n[0]).join('')}
+                      </div>
+                    )}
+                  </div>
+                  <div className="absolute inset-0 bg-white/20 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                </div>
+
+                {/* Name and Role */}
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-zenith-grey-100 transition-colors duration-300">
+                  {member.name}
+                </h3>
+                <p className="text-zenith-grey-300 mb-3 group-hover:text-zenith-grey-200 transition-colors duration-300 font-semibold">
+                  {member.role}
+                </p>
+                {/* Expertise Badge */}
+                <div className="mb-4">
+                  <div className="inline-block bg-gradient-to-r from-white/10 to-white/5 border border-white/20 rounded-full px-4 py-2 backdrop-blur-sm">
+                    <p className="text-xs text-white font-medium">
+                      {member.expertise}
+                    </p>
+                  </div>
+                </div>
+                {/* Description */}
+                <p className="text-zenith-grey-400 mb-4 group-hover:text-zenith-grey-300 transition-colors duration-300 text-sm leading-relaxed flex-grow">
+                  {member.description}
+                </p>
+
+                {/* LinkedIn Button */}
+                <div className="mt-auto">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zenith-grey-700/50 text-white hover:bg-white hover:text-zenith-black transition-all duration-300 hover:scale-110 group-hover:shadow-lg"
+                    aria-label={`${member.name} LinkedIn`}
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

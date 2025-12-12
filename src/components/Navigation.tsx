@@ -9,7 +9,7 @@ export default function Navigation() {
     { label: 'About us', href: '#who-we-are' },
     { label: 'Services', href: '#specialties' },
     { label: 'Team', href: '#team' },
-    { label: 'Whitepaper', href: 'https://drive.google.com/file/d/1saUFPcv5kjfmV_Qg4KEwrJz891EBnsCW/view?usp=drivesdk', external: true }
+    { label: 'Whitepaper', href: 'https://quantzen-my.sharepoint.com/:b:/g/personal/support_quantzen_live/IQBuPTTFs20jT4vWull0t_mgAfAIx-mJt8weznC88NHkPlo', external: true }
   ];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, external?: boolean) => {
