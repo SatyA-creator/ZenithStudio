@@ -8,6 +8,7 @@ import Abilities from './components/Abilities';
 import QuantZen from './components/QuantZen';
 import Sectors from './components/Sectors';
 import Team from './components/Team';
+import PressRelease from './components/PressRelease';
 import Roadmap from './components/Roadmap';
 import WhyNow from './components/WhyNow';
 import ContactForm from './components/ContactForm';
@@ -73,6 +74,7 @@ function App() {
       <QuantZen />
       <Sectors />
       <Team />
+      <PressRelease />
       <Roadmap />
       <WhyNow />
       <ContactForm />
